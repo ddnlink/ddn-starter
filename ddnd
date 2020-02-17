@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly PROJ_NAME="DDN"
+readonly PROJ_NAME="ddn"
 readonly PROG_DIR=$(pwd)
 readonly PID_FILE=$PROG_DIR/$PROJ_NAME.pid
 
@@ -12,7 +12,7 @@ function read_port() {
 }
 
 function is_running() {
-  test -f $PID_FILE && ps -p $(cat $PID_FILE) > /dev/null
+  test -f "$PID_FILE" && ps -p "$(cat $PID_FILE)" > /dev/null
 }
 
 function status() {
@@ -193,7 +193,7 @@ function upgrade() {
       echo $i. $ip [$memo] "Version:"$Version "Date:"$Date  "Size:"$Size
     else
       status[$i]="N"
-      memo="No data,do not use."
+      memo="No data, do not use."
       echo $i. $ip [$memo]
     fi
   done
