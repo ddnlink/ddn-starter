@@ -1,8 +1,8 @@
 #!/bin/bash
 
-readonly PROJ_NAME={{name}}
+readonly PROJ_NAME="DDN"
 readonly PROG_DIR=$(pwd)
-readonly PID_FILE=$PROG_DIR/`$PROJ_NAME`.pid
+readonly PID_FILE="$PROG_DIR/$PROJ_NAME".pid
 
 # 修改主节点
 readonly IPS=("https://ddn.link/static/download-International" "http://ddn.link/static/download-Chinese")
@@ -17,15 +17,15 @@ function is_running() {
 
 function status() {
   if is_running; then
-    echo `$PROJ_NAME server is running`
+    echo "$PROJ_NAME server is running"
   else
-    echo `$PROJ_NAME server is not running`
+    echo "$PROJ_NAME server is not running"
   fi
 }
 
 function start() {
   if is_running; then
-    echo `$PROJ_NAME server is already started`
+    echo "$PROJ_NAME server is already started"
   else
     rm -f $PROG_DIR/ddn.pid
     node $PROG_DIR/app.js --base $PROG_DIR --daemon $@
@@ -34,7 +34,7 @@ function start() {
 
 function stop() {
   local pid
-  if test -f $PID_FILE; then
+  if [ -f $PID_FILE ]; then
     pid=$(cat $PID_FILE)
   fi
   if [ -n "$pid" ] && ps -p "$pid" > /dev/null; then
@@ -44,15 +44,15 @@ function stop() {
     while ps -p $pid > /dev/null; do
       if [ $i == 5 ]; then
         kill -9 $pid
-        echo `$PROJ_NAME server killed`
+        echo "$PROJ_NAME server killed"
       fi
       echo "Still waiting for ddn server to stop ..."
       sleep 1
       ((i++))
     done
-    echo `$PROJ_NAME server stopped`
+    echo "$PROJ_NAME server stopped"
   else
-    echo `$PROJ_NAME server is not running`
+    echo "$PROJ_NAME server is not running"
   fi
   rm -f $PID_FILE
 }
