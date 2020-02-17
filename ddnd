@@ -2,7 +2,7 @@
 
 readonly PROJ_NAME="ddn"
 readonly PROG_DIR=$(pwd)
-readonly PID_FILE=$PROG_DIR/$PROJ_NAME.pid
+readonly PID_FILE=$PROG_DIR/"$PROJ_NAME".pid
 
 # 修改主节点
 readonly IPS=("https://ddn.link/static/download-International" "http://ddn.link/static/download-Chinese")
