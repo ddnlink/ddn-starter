@@ -2,16 +2,16 @@
 
 # DDN Starter
 
-website: [testnet.ddn.link](http://testnet.ddn.link)
+website: <http://testnet.ddn.link>
 
 DDN, Data Delivery Network, is next generation blockchain system.
 
-More infomation please visit our [official website](https://www.ddn.link) or [ddn-docs](https://github.com/ddnlink/ddn-docs)
+More infomation please visit our [official website](https://www.ddn.link) or [ddn-docs](http://docs.ddn.link/guide/get-started)
 
 **Professional books and videos**：[nodejs on blockchain 2](https://github.com/imfly/blockchain-on-nodejs)
 
 
-## Installation for ubuntu 16.04.x or higher
+## Installation for ubuntu 18.04.x or higher
 
 ```
 # Install dependency package
