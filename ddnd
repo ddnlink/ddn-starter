@@ -1,8 +1,7 @@
 #!/bin/bash
 
-readonly PROJ_NAME="ddn"
 readonly PROG_DIR=$(pwd)
-readonly PID_FILE=$PROG_DIR/"$PROJ_NAME".pid
+readonly PID_FILE=$PROG_DIR/ddn.pid
 
 # 修改主节点
 readonly IPS=("https://ddn.link/static/download-International" "http://ddn.link/static/download-Chinese")
@@ -12,29 +11,29 @@ function read_port() {
 }
 
 function is_running() {
-  test -f "$PID_FILE" && ps -p "$(cat $PID_FILE)" > /dev/null
+  test -f $PID_FILE && ps -p $(cat $PID_FILE) > /dev/null
 }
 
 function status() {
   if is_running; then
-    echo "$PROJ_NAME server is running"
+    echo "DDN server is running"
   else
-    echo "$PROJ_NAME server is not running"
+    echo "DDN server is not running"
   fi
 }
 
 function start() {
   if is_running; then
-    echo "$PROJ_NAME server is already started"
+    echo "DDN server is already started"
   else
-    rm -f $PID_FILE
+    rm -f $PROG_DIR/ddn.pid
     node $PROG_DIR/app.js --base $PROG_DIR --daemon $@
   fi
 }
 
 function stop() {
   local pid
-  if [ -f $PID_FILE ]; then
+  if test -f $PID_FILE; then
     pid=$(cat $PID_FILE)
   fi
   if [ -n "$pid" ] && ps -p "$pid" > /dev/null; then
@@ -44,15 +43,15 @@ function stop() {
     while ps -p $pid > /dev/null; do
       if [ $i == 5 ]; then
         kill -9 $pid
-        echo "$PROJ_NAME server killed"
+        echo "DDN server killed"
       fi
-      echo "Still waiting for $PROJ_NAME server to stop ..."
+      echo "Still waiting for ddn server to stop ..."
       sleep 1
       ((i++))
     done
-    echo "$PROJ_NAME server stopped"
+    echo "DDN server stopped"
   else
-    echo "$PROJ_NAME server is not running"
+    echo "DDN server is not running"
   fi
   rm -f $PID_FILE
 }
@@ -63,7 +62,7 @@ function restart() {
 }
 
 function ismainnet(){
-  net=$(cat $PROG_DIR/.ddnrc.js | grep netVersion | awk -F: '{print $2}' | cut -d \" -f2)
+  net=$(cat $PROG_DIR/config.json | grep net | awk -F: '{print $2}' | cut -d \" -f2)
   if [ i$net != i"mainnet" ] && [ i$net != i"testnet" ];then
     echo "Wrong net!"
     exit 2
@@ -193,7 +192,7 @@ function upgrade() {
       echo $i. $ip [$memo] "Version:"$Version "Date:"$Date  "Size:"$Size
     else
       status[$i]="N"
-      memo="No data, do not use."
+      memo="No data,do not use."
       echo $i. $ip [$memo]
     fi
   done
@@ -221,7 +220,7 @@ function upgrade() {
   echo "Copying new files ..."
   for file in `ls $extractedDir`
   do
-    if [ "$file" != ".ddnrc.js" -a "$file" != "blockchain.db" ]; then
+    if [ "$file" != "config.json" -a "$file" != "blockchain.db" ]; then
     echo "copy $extractedDir/$file ..."
     cp -r $extractedDir/$file ./
     fi

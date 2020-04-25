@@ -1,17 +1,22 @@
 [中文版](./README-zh-CN.md) | [English](./README.md)
 
-# DDN Starter
-
-website: <http://testnet.ddn.link>
+# DDN
 
 DDN, Data Delivery Network, is next generation blockchain system.
 
-More infomation please visit our [official website](https://www.ddn.link) or [ddn-docs](http://docs.ddn.link/guide/get-started)
+More infomation please visit our [official website](https://www.ddn.link) or [ddn-docs](https://github.com/ddnlink/ddn-docs)
 
-**Professional books and videos**：[nodejs on blockchain 2](https://github.com/imfly/blockchain-on-nodejs)
+## System Dependency
 
+- nodejs v8+
+- npm 5.3+
+- node-gyp v3.6.2+ 
+- sqlite v3.8.2+
+- mysql 5.0+
+- g++
+- libssl
 
-## Installation for ubuntu 18.04.x or higher
+## Installation for ubuntu 16.04.x or higher
 
 ```
 # Install dependency package
@@ -30,7 +35,7 @@ nvm install node 8
 node --version
 
 # git clone sourece code
-git clone https://github.com/ddnlink/ddn-starter.git && cd ddn && chmod u+x ddnd
+git clone https://github.com/ddnlink/ddn.git && cd ddn && chmod u+x ddnd
 
 # Install node packages
 npm install
@@ -55,7 +60,7 @@ nvm install node 8
 node --version
 
 # git clone sourece code
-git clone https://github.com/ddnlink/ddn-starter.git && cd ddn && chmod u+x ddnd
+git clone https://github.com/ddnlink/ddn.git && cd ddn && chmod u+x ddnd
 
 # Install node packages
 npm install
@@ -106,13 +111,27 @@ node app.js --help
 }
 ```
 
+## Test
+
+Start server firstly.
+```
+cd DDN && yarn start
+```
+
+Then, test
+```
+$ yarn test
+```
+
 ## Releated projects
 
-- [ddn](https://github.com/ddnlink/ddn)
 - [ddn-docs](https://github.com/ddnlink/ddn-docs)
+- [ddn](https://github.com/ddnlink/ddn)
+- [node-sdk](https://github.com/ddnlink/node-sdk)
+- [ddn-explorer] website: [ddn.link](http://mainnet.ddn.link)
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2016-2019 DDN FOUNDATION. All rights reserved. See License.txt in the project root for license information.
+Copyright (c) 2016-2019 DDN.link. All rights reserved. See License.txt in the project root for license information.

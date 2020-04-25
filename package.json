@@ -1,7 +1,6 @@
 {
-  "name": "ddn-testnet",
-  "version": "0.0.1",
-  "description": "DDN testnet",
+  "name": "example",
+  "version": "1.0.5",
   "main": "./app.js",
   "private": true,
   "repository": {
