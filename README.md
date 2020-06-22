@@ -101,13 +101,15 @@ node app.js --help
 **Note**: You can replace the [*] of the address with `D`、`E`...
 
 ```
+// Gaccount:
 {
   "keypair": {
-    "publicKey": "2e6d978c5e6f1fbfc5a27abd964d9b6adc352daa81e31d9098a4f5ee3d7f885e",
-    "privateKey": "863669059023e53d46d92b6a1a7bdaa8a9ff3555d98c07517c2a3a08c89ff9d02e6d978c5e6f1fbfc5a27abd964d9b6adc352daa81e31d9098a4f5ee3d7f885e"
+    "publicKey": "daeee33def7eef0c7ba06ec66eda7204437ba88ace8f04e4a6aa4d7bfbd18bc1",
+    "privateKey": "cd4737a82bc9525fb763452bc0dd34585454cd5ed301dbcde2b7ba3478a8d32cdaeee33def7eef0c7ba06ec66eda7204437ba88ace8f04e4a6aa4d7bfbd18bc1"
   },
-  "address": "[*]CE3q83WTqk58Y3hU9GDStn7MmqWU9xHbK",
-  "secret": "enter boring shaft rent essence foil trick vibrant fabric quote indoor output"
+  "address": "[*]C5kJzMdNDhrnupWX2NGafzMoiwdHiySBe",
+  "secret": "enter boring shaft rent essence foil trick vibrant fabric quote indoor output",
+  "nethash": "0ab796cd"
 }
 ```
 
