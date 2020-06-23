@@ -62,7 +62,7 @@ function restart() {
 }
 
 function ismainnet(){
-  net=$(cat $PROG_DIR/config.json | grep net | awk -F: '{print $2}' | cut -d \" -f2)
+  net=$(cat $PROG_DIR/.ddnrc.js | grep net | awk -F: '{print $2}' | cut -d \" -f2)
   if [ i$net != i"mainnet" ] && [ i$net != i"testnet" ];then
     echo "Wrong net!"
     exit 2
@@ -220,7 +220,7 @@ function upgrade() {
   echo "Copying new files ..."
   for file in `ls $extractedDir`
   do
-    if [ "$file" != "config.json" -a "$file" != "blockchain.db" ]; then
+    if [ "$file" != ".ddnrc.js" -a "$file" != "blockchain.db" ]; then
     echo "copy $extractedDir/$file ..."
     cp -r $extractedDir/$file ./
     fi
