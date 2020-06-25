@@ -69,10 +69,12 @@ npm install
 ## Run 
 
 ```
-cd DDN && yarn start // or npm start
+cd DDN && yarn start // or npm start or cnpm i in china
 or
 cd DDN && ./ddnd start
 ```
+
+
 
 ## Usage
 

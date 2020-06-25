@@ -43,13 +43,6 @@ function genOptions() {
 
     const genesisblockObject = JSON.parse(fs.readFileSync(genesisblockFile, 'utf8'));
 
-    const protoFile = path.join(baseDir, 'protos', 'ddn.proto');
-    if (!fs.existsSync(protoFile)) {
-        console.error('Failed: DDN proto file does not exists.');
-        process.exit(1);
-        return;
-    }
-
     const configObject = DdnCore.getUserConfig({ cwd: baseDir });
 
     configObject.version = packageFile.version;
@@ -121,7 +114,6 @@ async function main() {
         }
 
         process.exit(1);
-        return;
     }
 }
 
