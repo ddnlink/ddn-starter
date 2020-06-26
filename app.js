@@ -25,6 +25,7 @@ function genOptions() {
         .option('-l, --log <level>', 'Log level')
         .option('-d, --daemon', 'Run ddn node as daemon')
         .option('-e, --execute <path>', 'exe')
+        .option('-r, --reindex', 'verify or not when block loading')
         .option('--dapps <dir>', 'DApps directory')
         .option('--base <dir>', 'Base directory')
         .parse(process.argv);
@@ -38,7 +39,6 @@ function genOptions() {
     if (!fs.existsSync(genesisblockFile)) {
         console.error("Failed: DDN genesisblock file does not exists.")
         process.exit(1);
-        return;
     }
 
     const genesisblockObject = JSON.parse(fs.readFileSync(genesisblockFile, 'utf8'));
@@ -69,7 +69,7 @@ function genOptions() {
                 };
             });
         } else {
-            configObject.peers.list = [];
+            configObject.peers.list = command.peers;
         }
     }
 
@@ -85,7 +85,6 @@ function genOptions() {
         baseDir,
         configObject,
         genesisblockObject,
-        protoFile,
         isDaemonMode: !!command.daemon
     }
 }
