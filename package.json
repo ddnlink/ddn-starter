@@ -1,6 +1,6 @@
 {
-  "name": "ddn-starter",
-  "version": "3.5.7",
+  "name": "ddn",
+  "version": "3.6.0",
   "main": "./app.js",
   "private": true,
   "repository": {
