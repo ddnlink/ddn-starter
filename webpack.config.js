@@ -61,8 +61,8 @@ var getPlugins = function(env) {
   return plugins;
 };
 
-module.exports = function(fullpath) {
-  var env = process.env.NODE_ENV;
+module.exports = function (fullpath) {
+  var env = process.env.NODE_ENV
 
   return {
     entry: {
@@ -76,10 +76,10 @@ module.exports = function(fullpath) {
     target: 'node',
 
     externals: [
-        {
-            _require_native_: "require"
-        },
-        nodeExternals()
+      {
+        _require_native_: 'require'
+      },
+      nodeExternals()
     ],
 
     plugins: getPlugins(env),
