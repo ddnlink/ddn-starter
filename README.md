@@ -1,6 +1,4 @@
-[中文版](./README-zh-CN.md) | [English](./README.md)
-
-# DDN
+# DDN-starter
 
 DDN, Data Delivery Network, is next generation blockchain system.
 
@@ -26,12 +24,9 @@ apt update
 
 # Install dependency package
 sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential libtool libtool-bin -y
-
-ubuntu 18.04 请安装 libtool 
- 
 ```
 
-## Install Node
+## Install Node.js
 
 ```
 # Install nvm
@@ -60,10 +55,10 @@ npm install --production
 $ chmod u+x ddnd && ./ddnd configure
 
 # start
-$ ./ddnd start  // 或者使用 `node app.js`， 使用 ./ddnd status 查看运行状态
+$ ./ddnd start  // or `node app.js`
 ```
 
-## Installation for Mac 10.01.x or higher
+## Install for Mac 10.01.x or higher
 
 ```
 # Install dependency package
@@ -88,6 +83,27 @@ git clone https://github.com/ddnlink/ddn-starter.git && cd ddn-starter && chmod 
 npm install --production
 ```
 
+## Install for Windows with docker
+
+If you are a Dapp Developer, you can install DDN peer on your Linux or Mac
+
+[Install Docker firstly](https://store.docker.com/search?offering=community&type=edition)
+
+```
+# build DDN image
+$ docker build -t ddnlink/ddn:v3.5.0 .
+
+# or pull
+$ docker pull ddnlink/ddn:v3.5.0
+```
+
+```
+# run docker and asch
+$docker run -it --name ddn -p 8001:8001 ddnlink/ddn:v3.5.0 /bin/bash
+root@e149b6732a48:/ddn# ./ddnd start
+DDN server is running ...
+```
+
 ## Run 
 
 ```
@@ -95,6 +111,10 @@ cd DDN && yarn start // or npm start
 or
 cd DDN && ./ddnd start
 ```
+
+## Access in browser
+
+Then open `http://localhost:8001/api/blocks/getStatus` in your browser
 
 ## Usage
 
@@ -118,22 +138,14 @@ node app.js --help
     --reindex                  Reindex blockchain
     --base <dir>               Base directory
 ```
-## Default localnet genesis account
 
-**Note**: You can replace the [*] of the address with `D`、`E`...
+## Get DDNs for test
 
-```
-// Gaccount:
-{
-  "keypair": {
-    "publicKey": "daeee33def7eef0c7ba06ec66eda7204437ba88ace8f04e4a6aa4d7bfbd18bc1",
-    "privateKey": "cd4737a82bc9525fb763452bc0dd34585454cd5ed301dbcde2b7ba3478a8d32cdaeee33def7eef0c7ba06ec66eda7204437ba88ace8f04e4a6aa4d7bfbd18bc1"
-  },
-  "address": "[*]C5kJzMdNDhrnupWX2NGafzMoiwdHiySBe",
-  "secret": "enter boring shaft rent essence foil trick vibrant fabric quote indoor output",
-  "nethash": "0ab796cd"
-}
-```
+Any behavior on the blockchain requires amounts of digital assets. You can automatically obtain DDNs of testnet through the following activities for development and testing. Scan the QR code on the follow image with your mobile phone
+
+<img src="./docs/datm.jpg" width="200px">
+
+> PS：DATM is a distributed task management tool based on DDN blockchain. You can get tasks and discuss problems. When you complete tasks, The system will pay you DDN through the smart contract.
 
 ## Test
 
