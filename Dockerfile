@@ -15,7 +15,7 @@ RUN nvm install 10.21.0
 
 COPY . /ddn
 
-RUN git clone https://github.com/ddnlink/ddn.git .
+RUN git clone https://github.com/ddnlink/ddn-starter.git .
 
 RUN  npm install --production 
 

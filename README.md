@@ -18,6 +18,8 @@ More infomation please visit our [official website](https://www.ddn.link) or [dd
 
 ## Installation for ubuntu 16.04.x or higher
 
+Development
+
 ```
 # Update
 apt update
@@ -25,8 +27,13 @@ apt update
 # Install dependency package
 sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential libtool libtool-bin -y
 
-ubuntu 18.04 请将安装 libtool 
+ubuntu 18.04 请安装 libtool 
  
+```
+
+## Install Node
+
+```
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 # This loads nvm
@@ -36,14 +43,24 @@ export NVM_DIR="$HOME/.nvm"
 
 # Install node and npm for current user.
 nvm install node 10.21.0
-# check node version and it should be v8.x.x
+# check node version and it should be v10.x.x
 node --version
+```
 
+## Install DDN peer (Development)
+
+```
 # git clone sourece code
-git clone https://github.com/ddnlink/ddn.git && cd ddn && chmod u+x ddnd
+git clone https://github.com/ddnlink/ddn-starter.git && cd ddn-starter 
 
 # Install node packages
-npm install
+npm install --production 
+
+# config
+$ chmod u+x ddnd && ./ddnd configure
+
+# start
+$ ./ddnd start  // 或者使用 `node app.js`， 使用 ./ddnd status 查看运行状态
 ```
 
 ## Installation for Mac 10.01.x or higher
@@ -60,12 +77,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Install node and npm for current user.
-nvm install node 8
-# check node version and it should be v8.x.x
+nvm install node 10
+# check node version and it should be v10.x.x
 node --version
 
 # git clone sourece code
-git clone https://github.com/ddnlink/ddn.git && cd ddn && chmod u+x ddnd
+git clone https://github.com/ddnlink/ddn-starter.git && cd ddn-starter && chmod u+x ddnd
 
 # Install node packages
 npm install --production
@@ -134,6 +151,7 @@ $ yarn test
 
 - [ddn-docs](https://github.com/ddnlink/ddn-docs)
 - [ddn](https://github.com/ddnlink/ddn)
+- [js-sdk](https://github.com/ddnlink/ddn/packages/js-sdk)
 - [node-sdk](https://github.com/ddnlink/node-sdk)
 - [ddn-explorer] website: [ddn.link](http://mainnet.ddn.link)
 
