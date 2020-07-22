@@ -53,7 +53,8 @@
     "@ddn/peer": "^0.5.5",
     "@ddn/utils": "^0.1.10",
     "commander": "2.6.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
