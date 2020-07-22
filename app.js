@@ -2,14 +2,15 @@
  * 系统启动入口
  * wangxm   2018-12-25
  */
-const packageFile = require('./package.json')
-
 const command = require('commander')
 const path = require('path')
 const fs = require('fs')
 const DdnCore = require('@ddn/core').default
 const DdnPeer = require('@ddn/peer').default
 const DdnUtils = require('@ddn/utils').default
+
+const packageFile = require('./package.json')
+const constants = require('./constants')
 
 /**
  * 整理系统配置文件生成输入参数
@@ -84,6 +85,7 @@ function genOptions () {
   return {
     baseDir,
     configObject,
+    constants,
     genesisblockObject,
     isDaemonMode: !!command.daemon
   }
@@ -91,10 +93,10 @@ function genOptions () {
 
 async function main () {
   global._require_runtime_ = m => {
-    if (global._require_native_ && typeof global._require_native_ === 'function') {
-      return _require_native_(m)
+    if (typeof (global._require_native_) === 'function') {
+      return global._require_native_(m)
     } else {
-      return require(m).default || require(m)
+      return require(m).default || require(m) // 兼容 ESM
     }
   }
 
