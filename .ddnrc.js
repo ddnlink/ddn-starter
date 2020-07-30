@@ -18,6 +18,7 @@ module.exports = {
   net: 'testnet',
   nethash: 'gar0fktt',
   payloadLimitSize: '8mb',
+  clientDriftSeconds: 5,
 
   /**
    * About Api
