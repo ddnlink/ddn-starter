@@ -1,6 +1,6 @@
 {
   "name": "ddn",
-  "version": "3.6.0",
+  "version": "3.6.2",
   "main": "./app.js",
   "private": true,
   "repository": {
@@ -39,7 +39,7 @@
     "node": ">=8.6.0"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development node --harmony app.js",
+    "start": "cross-env NODE_ENV=development node app.js",
     "test": "./node_modules/.bin/mocha -r intelli-espower-loader test/**/*.test.js",
     "build": "cross-env NODE_ENV=production ./node_modules/.bin/gulp linux-build-main",
     "build-testnet": "./node_modules/.bin/gulp linux-build-test",
@@ -48,9 +48,9 @@
     "deploy": "deploy blockchain"
   },
   "dependencies": {
-    "@ddn/core": "^0.2.4",
-    "@ddn/peer": "^0.5.7",
-    "@ddn/utils": "^0.1.10",
+    "@ddn/core": "^0.2.5",
+    "@ddn/peer": "^0.5.12",
+    "@ddn/utils": "^0.1.12",
     "commander": "2.6.0",
     "lodash": "^4.17.11",
     "sqlite3": "^5.0.0"
