@@ -23,7 +23,7 @@ Development
 apt update
 
 # Install dependency package
-sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential libtool libtool-bin -y
+sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential libtool libtool-bin ibsqlite3-dev -y
 ```
 
 ## Install Node.js
