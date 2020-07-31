@@ -55,7 +55,7 @@ function getCmds(osName, net) {
   var fullpath = path.join(__dirname, 'build', dir);
 
   var result = [];
-  result.push(format('cd %s && mkdir -p public dapps tmp logs bin config', fullpath));
+  result.push(format('cd %s && mkdir -p public dapps tmp logs bin config db', fullpath));
   result.push(format('cp -r package.json ddnd init .ddnrc.js %s', fullpath));
   if (net != 'localnet') {
     if (osName == 'mac') {
