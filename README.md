@@ -8,10 +8,10 @@ More infomation please visit our [official website](https://www.ddn.link) or [dd
 
 ## System Dependency
 
-- nodejs v8+
+- nodejs v10+
 - npm 5.3+
 - node-gyp v3.6.2+ 
-- sqlite v3.8.2+
+- sqlite v4.0.0+
 - mysql 5.0+
 - g++
 - libssl

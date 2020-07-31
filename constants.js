@@ -3,10 +3,10 @@
  * Note: Once the mainnet is online, this file can no longer be changed.
  */
 module.exports = {
-  nethash: 'gar0fktt', // 标定该链的版本
-  tokenName: 'HBL',
-  tokenPrefix: 'H',
-  foundAddress: 'HLjrrVwnmMXstcAYVjcrpwyYb3kY1ehABU',
+  nethash: '0ab796cd', // 标定该链的版本
+  tokenName: 'DDN',
+  tokenPrefix: 'D',
+  foundAddress: 'DLjrrVwnmMXstcAYVjcrpwyYb3kY1ehABU',
   walletUrl: 'http://wallet.ddn.link',
 
   interval: 10, // 10ms
@@ -25,7 +25,7 @@ module.exports = {
   maxConfirmations: 77 * 100,
   confirmationLength: 77,
   fixedPoint: 10 ** 8,
-  totalAmount: '10000000000000000', // = maxAmount * fixedPoint
+  totalAmount: '10000000000000000', // Bignum update
   maxTxsPerBlock: 500,
 
   testnet: {
@@ -44,7 +44,7 @@ module.exports = {
 
     // Fees for transacton
     fees: {
-     // base
+      // base
       transfer: '0.1',
       vote: '0.1',
       delegate: '100',
@@ -96,7 +96,7 @@ module.exports = {
 
     // Fees for transacton
     fees: {
-     // base
+      // base
       transfer: '0.1',
       vote: '0.1',
       delegate: '100',
