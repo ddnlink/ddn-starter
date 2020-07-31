@@ -45,7 +45,7 @@ function genOptions () {
   const genesisblockObject = JSON.parse(fs.readFileSync(genesisblockFile, 'utf8'))
 
   const configObject = DdnCore.getUserConfig({ cwd: baseDir })
-
+ 
   configObject.version = packageFile.version
   configObject.basedir = baseDir
   configObject.buildVersion = 'development'
@@ -96,7 +96,7 @@ async function main () {
     if (typeof (global._require_native_) === 'function') {
       return global._require_native_(m)
     } else {
-      return require(m).default || require(m) // 兼容 ESM
+      return require(m).default || require(m)
     }
   }
 
