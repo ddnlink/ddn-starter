@@ -25,10 +25,14 @@ Development
 apt update
 
 # Install dependency package
+<<<<<<< HEAD
 sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential libtool libtool-bin -y
 
 ubuntu 18.04 请安装 libtool 
  
+=======
+sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential libtool libtool-bin ibsqlite3-dev -y
+>>>>>>> 84e22d9... Update @ddn/core
 ```
 
 ## Install Node
@@ -88,6 +92,29 @@ git clone https://github.com/ddnlink/ddn-starter.git && cd ddn-starter && chmod 
 npm install --production
 ```
 
+## Install for Windows with docker
+
+If you are a Dapp Developer, you can install DDN peer on your Linux or Mac
+
+```
+# build DDN image
+$ docker build -t ddnlink/ddn:v3.5.0 .
+
+# or pull
+$ docker pull ddnlink/ddn:v3.5.0
+```
+
+```
+# run docker
+$docker run -it --name ddn -p 8001:8001 ddnlink/ddn:v3.5.0 /bin/bash
+```
+
+```
+# run DDN
+root@e149b6732a48:/ddn# ./ddnd start
+DDN server is running ...
+```
+
 ## Run 
 
 ```
@@ -118,22 +145,7 @@ node app.js --help
     --reindex                  Reindex blockchain
     --base <dir>               Base directory
 ```
-## Default localnet genesis account
 
-**Note**: You can replace the [*] of the address with `D`、`E`...
-
-```
-// Gaccount:
-{
-  "keypair": {
-    "publicKey": "daeee33def7eef0c7ba06ec66eda7204437ba88ace8f04e4a6aa4d7bfbd18bc1",
-    "privateKey": "cd4737a82bc9525fb763452bc0dd34585454cd5ed301dbcde2b7ba3478a8d32cdaeee33def7eef0c7ba06ec66eda7204437ba88ace8f04e4a6aa4d7bfbd18bc1"
-  },
-  "address": "[*]C5kJzMdNDhrnupWX2NGafzMoiwdHiySBe",
-  "secret": "enter boring shaft rent essence foil trick vibrant fabric quote indoor output",
-  "nethash": "0ab796cd"
-}
-```
 
 ## Test
 
