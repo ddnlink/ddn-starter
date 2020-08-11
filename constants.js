@@ -8,9 +8,13 @@ module.exports = {
   tokenPrefix: 'H',
   foundAddress: 'HLjrrVwnmMXstcAYVjcrpwyYb3kY1ehABU',
   walletUrl: 'http://wallet.ddn.link',
-
+  enableMoreLockTypes: true,
+  
   interval: 10, // 10ms
   delegates: 101, // number
+  superPeers: 21, // core network
+  voters: 0,
+  remoteVoters: 0,
   maxAmount: 100000000,
   maxPayloadLength: 8 * 1024 * 1024,
   blockHeaderLength: 248,

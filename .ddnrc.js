@@ -13,8 +13,8 @@ module.exports = {
    */
   port: 8001,
   address: '0.0.0.0',
-  publicIp: '',
-  logLevel: 'error',
+  publicIp: '127.0.0.1',
+  logLevel: 'info',
   net: 'testnet',
   nethash: 'gar0fktt',
   payloadLimitSize: '8mb',
@@ -75,6 +75,7 @@ module.exports = {
       'arrange ketchup dial call glimpse mule animal have tower rubber dream cherry',
       'alarm rally fork garbage reveal priority valve bean always oblige romance smile',
       'cupboard find shed disorder wink differ ostrich want control room field ivory',
+      
       'dish risk escape camera corn lift weasel alpha hood fiscal minimum company',
       'wild march present sense approve antique fiscal bless kangaroo object duty grant',
       'grant insect rich genius cave cradle agent room river sponsor tiger endless',
@@ -103,6 +104,7 @@ module.exports = {
       'favorite best turn snow myself slogan caution slender dog palm tube sniff',
       'try glad gauge buffalo ostrich obey inflict smile reunion coyote good volume',
       'joy marine bottom napkin also dish radar notice fox walnut limb online',
+      
       'logic pledge spare assume rival uniform hunt space dove stable column candy',
       'noise battle slot candy minimum allow brand awesome over bird harbor color',
       'comfort action penalty kidney image same exhaust west vault process rubber estate',
@@ -159,11 +161,6 @@ module.exports = {
   dapp: {
     masterpassword: 'xS5XaSoHsTEL',
     params: {}
-  },
-  settings: {
-    enableMoreLockTypes: true,
-    delegateNumber: 101,
-    blockIntervalTime: 10
   },
 
   /**

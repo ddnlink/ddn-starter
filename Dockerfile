@@ -34,10 +34,10 @@ ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 # clone ddn source
-RUN git clone https://github.com/ddnlink/ddn-starter.git . \
-    && npm install --production \
-    && chmod u+x init/*.sh && chmod 755 ddnd && ./ddnd configure
+# RUN git clone https://github.com/ddnlink/ddn-starter.git . \
+#     && npm install --production \
+#     && chmod u+x init/*.sh && chmod 755 ddnd && ./ddnd configure
 
 EXPOSE 8001
 
-CMD ./ddnd start
+# CMD ./ddnd start

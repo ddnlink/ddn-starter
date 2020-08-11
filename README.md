@@ -98,8 +98,12 @@ $ docker pull ddnlink/ddn:v3.5.0
 ```
 
 ```
-# run docker and asch
+# run docker
 $docker run -it --name ddn -p 8001:8001 ddnlink/ddn:v3.5.0 /bin/bash
+```
+
+```
+# run DDN
 root@e149b6732a48:/ddn# ./ddnd start
 DDN server is running ...
 ```

@@ -40,7 +40,9 @@ var getLoaders = function(env) {
      * 
      * 所以，这里是一种 hack 处理方式，先将需要保留的 require 替换为 __non_webpack_require__，编译后自然就得到了 require 了
      * 
-     * 参考：https://github.com/webpack/webpack/issues/4175
+     * 参考：
+     * https://github.com/webpack/webpack/issues/4175
+     * https://github.com/HexMox/blog/issues/7
      */
     {
       // regex for the files that are problematic
