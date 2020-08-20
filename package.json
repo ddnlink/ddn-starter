@@ -50,8 +50,8 @@
   },
   "dependencies": {
     "@ddn/core": "^0.2.11",
-    "@ddn/peer": "^0.7.3",
-    "@ddn/utils": "^0.1.18",
+    "@ddn/peer": "^0.7.5",
+    "@ddn/utils": "^0.1.19",
     "commander": "2.6.0",
     "lodash": "^4.17.11",
     "sqlite3": "^5.0.0"
