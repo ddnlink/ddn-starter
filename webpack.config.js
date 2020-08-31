@@ -72,14 +72,15 @@ var getPlugins = function(env) {
           // 'global._require_native_': "_require_native_" 已经不需要了
         }),
         new webpack.optimize.DedupePlugin(),
-        new UglifyJsPlugin()
-
+        new UglifyJsPlugin(),
+        new webpack.EnvironmentPlugin(['NODE_ENV', 'DDN_ENV'])
           // Todo: webpack自带的UglifyJsPlugin不起作用？
           // new webpack.optimize.UglifyJsPlugin()
       ]);
   } else {
       plugins = _.union(defaultPlugins, [
         // new webpack.ProvidePlugin({'global._require_native_': "_require_native_"})
+        new webpack.EnvironmentPlugin(['NODE_ENV', 'DDN_ENV'])
       ]);
   }
 

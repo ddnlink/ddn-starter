@@ -65,9 +65,11 @@ function getCmds(osName, net) {
     }
 
     result.push(format('cp config/genesisBlock.json %s/config/', fullpath));
+    result.push(format('cp config/genesisBlock.custom.json %s/config/', fullpath));
   } else {
     // result.push(format('cp config.json %s/', fullpath));
     result.push(format('cp config/genesisBlock.json %s/config/', fullpath));
+    result.push(format('cp config/genesisBlock.custom.json %s/config/', fullpath));
     result.push(format('cp third_party/sqlite3.exe %s/', fullpath));
   }
 

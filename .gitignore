@@ -19,6 +19,7 @@ ssl
 **/**/config.mainnet.*
 **/**/config.local.*
 **/**/.ddnrc.local.*
+**/**/*.custom.*
 config/deploy
 
 # ide

@@ -5,7 +5,7 @@ function main() {
   apt-get update -yqq
 
   # echo "Installing nodejs,npm ..."
-  apt-get install nodejs -yqq && test -f /usr/bin/node || ln -s /usr/bin/nodejs /usr/bin/node
+  # apt-get install nodejs -yqq && test -f /usr/bin/node || ln -s /usr/bin/nodejs /usr/bin/node
 
   echo "Installing wget/curl/sqlite3 ..."
   apt-get install wget curl sqlite3 -yqq

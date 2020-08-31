@@ -25,14 +25,7 @@ Development
 apt update
 
 # Install dependency package
-<<<<<<< HEAD
-sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential libtool libtool-bin -y
-
-ubuntu 18.04 请安装 libtool 
- 
-=======
 sudo apt-get install curl sqlite3 ntp wget git libssl-dev openssl make gcc g++ autoconf automake python build-essential libtool libtool-bin ibsqlite3-dev -y
->>>>>>> 84e22d9... Update @ddn/core
 ```
 
 ## Install Node
