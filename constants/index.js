@@ -5,11 +5,6 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *-------------------------------------------------------------------------------------------- */
 
-let constants = require('./constants.ddn')
-
-// Todo: get it when building
-if (process.env.DDN_ENV === 'custom') {
-  constants = require('./constants.custom')
-}
+const constants = require('./constants')
 
 module.exports = constants

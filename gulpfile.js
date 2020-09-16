@@ -13,7 +13,12 @@ var format = util.format;
 var buildTime = moment().format('HH:mm:ss DD/MM/YYYY');
 
 function build(osName, net) {
-  var dir = packageFile.name + '-' + osName + '-' + packageFile.version + '-' + net;
+  let dir
+  if (process.env.DDN_ENV) {
+    dir = packageFile.name + '-' + process.env.DDN_ENV + '-' + osName + '-' + packageFile.version + '-' + net;
+  } else {
+    dir = packageFile.name + '-' + osName + '-' + packageFile.version + '-' + net;
+  }
   var fullpath = path.join(__dirname, 'build', dir);
 
   return webpack(require('./webpack.config.js')(fullpath), function(){
@@ -58,18 +63,15 @@ function getCmds(osName, net) {
   result.push(format('cd %s && mkdir -p public dapps tmp logs bin config db', fullpath));
   result.push(format('cp -r package.json ddnd init .ddnrc.js %s', fullpath));
   if (net != 'localnet') {
-    if (osName == 'mac') {
+    if (osName === 'mac') {
       result.push(format('sed -i "" "s/testnet/%s/g" %s/ddnd', net, fullpath));
     } else {
-      result.push(format('sed -i "s/testnet/%s/g" %s/ddnd', net, fullpath));
+      result.push(format('sed -i "" "s/testnet/%s/g" %s/ddnd', net, fullpath));
     }
 
     result.push(format('cp config/genesisBlock.json %s/config/', fullpath));
-    result.push(format('cp config/genesisBlock.custom.json %s/config/', fullpath));
   } else {
-    // result.push(format('cp config.json %s/', fullpath));
     result.push(format('cp config/genesisBlock.json %s/config/', fullpath));
-    result.push(format('cp config/genesisBlock.custom.json %s/config/', fullpath));
     result.push(format('cp third_party/sqlite3.exe %s/', fullpath));
   }
 

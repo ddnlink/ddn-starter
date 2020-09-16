@@ -11,12 +11,12 @@ module.exports = {
   /**
    * About Peer
   */
-  port: 8001,
+  port: 8000,
   address: "0.0.0.0",
   publicIp: "",
   logLevel: "error",
-  net: "testnet",
-  nethash: "gar0fktt",
+  net: "mainnet",
+  nethash: "usb5xudw",
   payloadLimitSize: "8mb",
   clientDriftSeconds: 5,
 
@@ -57,7 +57,7 @@ module.exports = {
     }
   },
   dapp: {
-    masterpassword: "xS5XaSoHsTEL",
+    masterpassword: "",
     params: {}
   },
   settings: {

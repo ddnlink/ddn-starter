@@ -33,8 +33,7 @@ function genOptions () {
 
   const baseDir = command.base || path.resolve(__dirname, './')
 
-  let genesisBlockFileName = process.env.DDN_ENV === 'custom' ? 'genesisBlock.custom.json' : 'genesisBlock.json'
-  let genesisblockFile = path.join(baseDir, 'config', genesisBlockFileName)
+  let genesisblockFile = path.join(baseDir, 'config', 'genesisBlock.json')
   if (command.genesisblock) {
     genesisblockFile = path.resolve(process.cwd(), command.genesisblock)
   }

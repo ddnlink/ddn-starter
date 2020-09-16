@@ -1,20 +1,22 @@
 /**
- * 本文件用于测试
+ * Please use yourself constants file
+ * Note: Once the mainnet is online, this file can no longer be changed.
  */
 module.exports = {
-  nethash: 'gar0fktt', // 标定该链的版本
-  tokenName: 'HBL',
-  tokenPrefix: 'H',
-  foundAddress: 'HLjrrVwnmMXstcAYVjcrpwyYb3kY1ehABU',
-  walletUrl: 'http://wallet.hbl.link',
-  enableMoreLockTypes: true,
+  nethash: '0ab796cd', // 标定该链的版本
+  tokenName: 'DDN',
+  tokenPrefix: 'D',
+  maxAmount: 1 * 10 ** 8,
+  fixedPoint: 10 ** 8,
+  totalAmount: '10000000000000000', // Bignum update
+  foundAddress: 'DLjrrVwnmMXstcAYVjcrpwyYb3kY1ehABU',
+  walletUrl: 'http://wallet.ddn.link',
 
   interval: 10, // 10ms
   delegates: 101, // number
   superPeers: 21,
-  voters: 20,
-  remoteVoters: 2,
-  maxAmount: 100000000,
+  voters: 67,
+  remoteVoters: 6,
   maxPayloadLength: 8 * 1024 * 1024,
   blockHeaderLength: 248,
   addressLength: 208,
@@ -27,8 +29,6 @@ module.exports = {
   maxSignaturesLength: 196 * 256,
   maxConfirmations: 77 * 100,
   confirmationLength: 77,
-  fixedPoint: 10 ** 8,
-  totalAmount: '10000000000000000', // = maxAmount * fixedPoint
   maxTxsPerBlock: 500,
 
   testnet: {
