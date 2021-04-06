@@ -64,9 +64,9 @@ function getCmds(osName, net) {
   result.push(format('cp -r package.json ddnd init .ddnrc.js %s', fullpath));
   if (net != 'localnet') {
     if (osName === 'mac') {
-      result.push(format('sed -i "" "s/testnet/%s/g" %s/ddnd', net, fullpath));
+      result.push(format('sed -i "" -e "s/testnet/%s/g" %s/ddnd', net, fullpath));
     } else {
-      result.push(format('sed -i "" "s/testnet/%s/g" %s/ddnd', net, fullpath));
+      result.push(format('sed -i -e "s/testnet/%s/g" %s/ddnd', net, fullpath));
     }
 
     result.push(format('cp config/genesisBlock.json %s/config/', fullpath));
