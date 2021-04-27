@@ -49,9 +49,10 @@
     "cm": "git-cz"
   },
   "dependencies": {
-    "@ddn/core": "^0.2.12",
-    "@ddn/peer": "^0.7.9",
-    "@ddn/utils": "^0.1.21",
+    "@ddn/core": "^1.0.6",
+    "@ddn/peer": "^1.0.6",
+    "@ddn/utils": "^1.0.6",
+    "@ddn/contract-types": "0.1.2",
     "commander": "2.6.0",
     "lodash": "^4.17.11",
     "sqlite3": "^5.0.0"
