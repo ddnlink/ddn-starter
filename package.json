@@ -1,6 +1,6 @@
 {
   "name": "ddn",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "main": "./app.js",
   "private": true,
   "repository": {
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@ddn/core": "^2.2.3",
-    "@ddn/peer": "^2.2.3",
+    "@ddn/peer": "^2.3.0",
     "@ddn/utils": "^2.2.3",
     "@ddn/contract-types": "0.3.0",
     "commander": "2.6.0",

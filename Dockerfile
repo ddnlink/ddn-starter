@@ -40,4 +40,4 @@ RUN git clone https://github.com/ddnlink/ddn-starter.git . \
 
 EXPOSE 8001
 
-CMD ./ddnd start
+CMD ./ddnd start && /bin/bash
