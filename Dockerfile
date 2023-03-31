@@ -38,6 +38,6 @@ RUN git clone https://github.com/ddnlink/ddn-starter.git . \
     && npm install --production \
     && chmod u+x init/*.sh && chmod 755 ddnd && ./ddnd configure
 
-EXPOSE 8001
+EXPOSE 8000 9001
 
 CMD ./ddnd start && /bin/bash

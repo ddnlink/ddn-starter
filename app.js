@@ -15,7 +15,7 @@ const constants = require('./constants')
 /**
  * 整理系统配置文件生成输入参数
  */
-function genOptions () {
+function genOptions() {
   command
     .version(packageFile.version)
     .option('-p, --port <port>', 'Listening port number')
@@ -45,7 +45,7 @@ function genOptions () {
   const genesisblockObject = JSON.parse(fs.readFileSync(genesisblockFile, 'utf8'))
 
   const configObject = DdnCore.getUserConfig({ cwd: baseDir })
- 
+
   configObject.version = packageFile.version
   configObject.basedir = baseDir
   configObject.buildVersion = 'development'
@@ -91,7 +91,7 @@ function genOptions () {
   }
 }
 
-async function main () {
+async function main() {
   global._require_runtime_ = m => {
     if (typeof (global._require_native_) === 'function') {
       return global._require_native_(m)
@@ -107,6 +107,7 @@ async function main () {
     peer = new DdnPeer()
     await peer.run(options)
   } catch (err) {
+    console.log('app.js error', err)
     console.error(DdnUtils.system.getErrorMsg(err))
 
     if (peer) {
