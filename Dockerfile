@@ -18,10 +18,8 @@ RUN apt-get update && \
 # nvm environment variables
 ENV NVM_DIR $HOME/.nvm
 ENV NODE_VERSION 10.21.0
-RUN mkdir -p $NVM_DIR
-
-# install nvm
-RUN curl --silent -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+RUN mkdir -p $NVM_DIR \
+ && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # install node and npm
 RUN source $NVM_DIR/nvm.sh \
@@ -40,4 +38,4 @@ RUN git clone https://github.com/ddnlink/ddn-starter.git . \
 
 EXPOSE 8000 9001
 
-CMD ./ddnd start && /bin/bash
+CMD  /bin/bash
